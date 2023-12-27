@@ -262,7 +262,7 @@ class CustomerCart extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
+                      '${customer.items.length} product${customer.items.length != 1 ? 's' : ''}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: textColor,
                             fontSize: 12,
@@ -272,8 +272,22 @@ class CustomerCart extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(
-                          onPressed: onPayPressed,
-                          child: const Text('Pay'),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  Colors.yellowAccent)),
+                          onPressed: () async {
+                            bool? result =
+                                await showPaymentConfirmationDialog(context);
+                            if (result == true) {
+                              onPayPressed();
+                            } else {
+                              return null;
+                            }
+                          },
+                          child: const Text(
+                            'Pay',
+                            style: TextStyle(color: Colors.redAccent),
+                          ),
                         ),
                       ],
                     ),
@@ -585,4 +599,33 @@ class Customer {
         items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
+}
+
+Future<bool?> showPaymentConfirmationDialog(BuildContext context) async {
+  return showDialog<bool>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Confirmation'),
+        content: Text('Do you want to proceed with the payment?'),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(true); // Bấm Yes
+            },
+            child: Text('Yes'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(false); // Bấm No
+            },
+            child: Text('No'),
+          ),
+        ],
+      );
+    },
+  );
 }
