@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'widgets/location/location_view.dart';
 import 'widgets/qldt/quanly_sinhvien.dart';
 
@@ -23,15 +22,20 @@ class MyHomePage extends StatelessWidget {
         title: Text("Quản lý sinh viên"),
       ),
       body: QuanLySinhVien(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Chuyển đến trang thời tiết khi nhấn nút
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Location()),
-          );
-        },
-        child: Icon(Icons.cloud),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              // Chuyển đến trang thời tiết khi nhấn nút
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GeolocatorWidget()),
+              );
+            },
+            child: Icon(Icons.location_on),
+          ),
+        ],
       ),
     );
   }
