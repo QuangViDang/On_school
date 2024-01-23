@@ -3,11 +3,23 @@ import 'package:moneymanager/orderfood/orderfood_view.dart';
 import 'widgets/location/location_view.dart';
 import 'widgets/qldt/quanly_sinhvien.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'PKA',
+      navigatorKey: navigatorKey,
+      navigatorObservers: [HeroController()],
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color color = Theme.of(context).primaryColor;
@@ -32,10 +44,10 @@ class MyApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'PKA layout demo',
+      title: 'PKA',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('PKA layout demo'),
+          title: const Text('PKA'),
         ),
         body: ListView(
           children: [
