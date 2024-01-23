@@ -30,7 +30,7 @@ class MyHomePage extends StatelessWidget {
               // Chuyển đến trang thời tiết khi nhấn nút
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => GeolocatorWidget()),
+                MaterialPageRoute(builder: (context) => GeolocatorExample()),
               );
             },
             child: Icon(Icons.location_on),
