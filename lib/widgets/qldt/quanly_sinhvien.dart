@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/../../models/sinhvien.dart';
+import '../../models/sinhvien.dart';
 import 'danhsach_sinhvien.dart';
 import 'formnhap_sinhvien.dart';
 
@@ -26,11 +26,16 @@ class _QuanLySinhVienState extends State<QuanLySinhVien> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        FormNhapSinhVien(onThemSinhVien: _themSinhVien),
-        DanhSachSinhVien(danhSachSinhVien),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Quản lý sinh viên"),
+      ),
+      body: ListView(
+        children: [
+          FormNhapSinhVien(onThemSinhVien: _themSinhVien),
+          DanhSachSinhVien(danhSachSinhVien),
+        ],
+      ),
     );
   }
 

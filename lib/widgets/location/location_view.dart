@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
+import 'map_view.dart';
+
 class GeolocatorExample extends StatefulWidget {
   @override
   _GeolocatorExampleState createState() => _GeolocatorExampleState();
@@ -38,7 +40,7 @@ class _GeolocatorExampleState extends State<GeolocatorExample> {
     }
   }
 
-  Future<void> _getLocation() async {
+  void _getLocation() async {
     try {
       // Lấy vị trí hiện tại của thiết bị
       Position position = await Geolocator.getCurrentPosition();
@@ -47,6 +49,17 @@ class _GeolocatorExampleState extends State<GeolocatorExample> {
         _latitude = position.latitude.toString();
         _longitude = position.longitude.toString();
       });
+
+      // Navigate to MapScreen
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LocationDetails(
+            latitude: position.latitude,
+            longitude: position.longitude,
+          ),
+        ),
+      );
     } catch (e) {
       print('Error getting location: $e');
     }

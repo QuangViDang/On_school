@@ -18,10 +18,6 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Quản lý sinh viên"),
-      ),
-      body: QuanLySinhVien(),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -34,6 +30,16 @@ class MyHomePage extends StatelessWidget {
               );
             },
             child: Icon(Icons.location_on),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              // Chuyển đến trang thời tiết khi nhấn nút
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => QuanLySinhVien()),
+              );
+            },
+            child: Icon(Icons.location_city),
           ),
         ],
       ),
