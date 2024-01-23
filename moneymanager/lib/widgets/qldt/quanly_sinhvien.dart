@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/sinhvien.dart';
+import '/../../models/sinhvien.dart';
 import 'danhsach_sinhvien.dart';
 import 'formnhap_sinhvien.dart';
 

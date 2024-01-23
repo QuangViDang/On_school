@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:date_format/date_format.dart';
 
-import '../models/sinhvien.dart';
+import '/../../models/sinhvien.dart';
 
 class FormNhapSinhVien extends StatefulWidget {
   final void Function(SinhVien) onThemSinhVien;

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'widgets/quanly_sinhvien.dart';
 
-main() => runApp(MyApp());
+import 'widgets/location/location_view.dart';
+import 'widgets/qldt/quanly_sinhvien.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -21,6 +23,16 @@ class MyHomePage extends StatelessWidget {
         title: Text("Quản lý sinh viên"),
       ),
       body: QuanLySinhVien(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Chuyển đến trang thời tiết khi nhấn nút
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Location()),
+          );
+        },
+        child: Icon(Icons.cloud),
+      ),
     );
   }
 }

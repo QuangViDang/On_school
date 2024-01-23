@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/sinhvien.dart';
+import '/../../models/sinhvien.dart';
 
 class DanhSachSinhVien extends StatelessWidget {
   final List<SinhVien> danhSachSinhVien;
