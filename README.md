@@ -1,23 +1,14 @@
 # Hello! 👋
 
-Welcome to project [Project Name]!
+Welcome to my University Projects Repository!
 
-We are delighted for your visit. This is not just a project, but a community, where everyone matters.
+We're glad you dropped by. This repository is a collection of my projects related to university coursework.
 
-## About the project
+## Repository Structure
 
-[Project Name] is where we unite creativity, passion and community spirit. If you're looking for a place to learn, share ideas or even just relax, you've come to the right place!
+- **Mobile App Branch**: This branch contains exercises and projects related to Flutter app development.
+- **NhapMon Branch**: In this branch, you'll find new exercises and assignments undertaken during my university studies.
 
-## How To Join
+Feel free to explore each branch to see the different projects and exercises. If you have any questions or suggestions, don't hesitate to reach out!
 
-We welcome all types of contributions. You can participate by:
-
-- **Suggest Ideas**: If you have a good idea or suggestion, please create a new Issue for us to discuss.
-- **Error Report**: Having an error? Let's create a new Issue and we'll fix it together.
-- **Discussions**: Participate in discussions to share your opinions and experiences.
-
-## Contact
-
-If you want to contact us, don't hesitate! Email us at [your.email@example.com](mailto:your.email@example.com).
-
-Thank you very much for your interest in [Project Name]. Let's join hands to build a great community! 🌟
+Thank you for checking out my University Projects Repository. Let's learn and grow together! 🌟
